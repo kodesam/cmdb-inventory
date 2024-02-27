@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+import plotly
 import plotly.graph_objects as go
 import json
 
