@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Inventory Data</title>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <h1>Inventory Data</h1>
+  <table>
+    <tr>
+      <th>Hostname</th>
+      <th>IP Address</th>
+      <th>Operating System</th>
+      <th>Memory</th>
+      <th>Storage</th>
+    </tr>
+    {% for item in inventory %}
+    <tr>
+      <td>{{ item['hostname'] }}</td>
+      <td>{{ item['ip'] }}</td>
+      <td>{{ item['os'] }}</td>
+      <td>{{ item['memory'] }}</td>
+      <td>{{ item['storage'] }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</body>
+</html>
