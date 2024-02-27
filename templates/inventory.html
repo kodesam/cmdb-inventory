@@ -1,6 +1,10 @@
 <form id="update-form">
-    <!-- Input fields for new inventory data -->
-      ...
+    <input type="text" id="hostname-input" placeholder="Hostname" required>
+    <input type="text" id="ip-input" placeholder="IP Address" required>
+    <input type="text" id="os-input" placeholder="Operating System" required>
+    <input type="text" id="memory-input" placeholder="Memory" required>
+    <input type="text" id="storage-input" placeholder="Storage" required>
+
     <button type="submit">Update Inventory</button>
 </form>
 
@@ -9,10 +13,13 @@
         event.preventDefault();
 
         // Collect the new inventory data from the form
-        const data = {
-            // Get the values from the input fields
-            ...
-        };
+    const data = {
+        hostname: document.getElementById('hostname-input').value,
+        ip: document.getElementById('ip-input').value,
+        os: document.getElementById('os-input').value,
+        memory: document.getElementById('memory-input').value,
+        storage: document.getElementById('storage-input').value
+    };
 
         // Make an API call to update the inventory
         fetch('/api/update_inventory', {
