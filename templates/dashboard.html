@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Inventory Dashboard</title>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+  <h1>Inventory Dashboard</h1>
+  <div id="inventory-pie"></div>
+
+  <script>
+    var inventoryPie = {{ inventory_pie | tojson }};
+
+    // Render the inventory pie chart
+    Plotly.newPlot('inventory-pie', inventoryPie);
+  </script>
+</body>
+</html>
