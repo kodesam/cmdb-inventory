@@ -19,7 +19,7 @@ app = Flask(__name__)
 # ]
 
 @app.route('/inventory')
-def view_inventory():
+def display_inventory():
     # Sample inventory data
     inventory_data = [
         {
