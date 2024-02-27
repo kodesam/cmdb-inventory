@@ -22,6 +22,13 @@ def index():
 
 @app.route('/inventory')
 def view_inventory():
+    # Generate data for the inventory pie chart...
+
+    # Convert the Figure object to a JSON-compatible format
+    inventory_pie_json = inventory_pie.to_json()
+
+    # Render the dashboard template with the JSON data
+    return render_template('dashboard.html', inventory_pie=inventory_pie_json)
     return render_template('inventory.html', inventory=inventory_data)
 
 @app.route('/dashboard')
