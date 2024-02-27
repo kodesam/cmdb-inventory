@@ -18,6 +18,21 @@ app = Flask(__name__)
     # Additional inventory data...
 # ]
 
+@app.route('/inventory')
+def view_inventory():
+    # Sample inventory data
+    inventory_data = [
+        {
+            'hostname': 'server1',
+            'ip': '192.168.0.10',
+            'os': 'Linux',
+            'memory': '8GB',
+            'storage': '500GB'
+        },
+        # Additional inventory data...
+    ]
+    return render_template('inventory.html', inventory=inventory_data)
+  
 @app.route('/api/update_inventory', methods=['POST'])
 def update_inventory():
     new_data = request.get_json()
