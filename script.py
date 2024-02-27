@@ -7,16 +7,16 @@ from flask import request
 app = Flask(__name__)
 
 # Sample inventory data...
-#inventory_data = [
-  #  {
-    #    'hostname': 'server1',
-     #   'ip': '192.168.0.10',
-     #   'os': 'Linux',
-     #   'memory': '8GB',
-    #    'storage': '500GB'
-#    },
+inventory_data = [
+    {
+        'hostname': 'server1',
+        'ip': '192.168.0.10',
+        'os': 'Linux',
+        'memory': '8GB',
+        'storage': '500GB'
+    },
     # Additional inventory data...
-# ]
+ ]
 
 @app.route('/inventory')
 def display_inventory():
