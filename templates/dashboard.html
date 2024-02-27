@@ -12,7 +12,7 @@
     var inventoryPie = JSON.parse('{{ inventory_pie | safe }}');
 
     // Render the inventory pie chart
-    Plotly.newPlot('inventory-pie', inventoryPie);
+    Plotly.newPlot('inventory-pie', inventoryPie.data, inventoryPie.layout);
 </script>
 </body>
 </html>
