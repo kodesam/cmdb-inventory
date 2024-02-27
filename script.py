@@ -36,7 +36,13 @@ def display_inventory():
             'memory': '8GB',
             'storage': '500GB'
         },
-        # Additional inventory data...
+        {
+        'hostname': 'server2',
+        'ip': '192.168.0.11',
+        'os': 'Linux2',
+        'memory': '18GB',
+        'storage': '100GB'
+        },
     ]
     return render_template('inventory.html', inventory=inventory_data)
   
