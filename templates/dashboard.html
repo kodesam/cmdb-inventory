@@ -9,10 +9,7 @@
   <div id="inventory-pie"></div>
 
 <script>
-    var inventoryPie = JSON.parse('{{ inventory_pie | tojson }}');
-
-    // Convert the JSON data back to the Plotly Figure object
-    inventoryPie = JSON.parse(inventoryPie);
+    var inventoryPie = JSON.parse('{{ inventory_pie | safe }}');
 
     // Render the inventory pie chart
     Plotly.newPlot('inventory-pie', inventoryPie);
