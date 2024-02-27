@@ -29,7 +29,7 @@ def view_inventory():
 
     # Render the dashboard template with the JSON data
     return render_template('dashboard.html', inventory_pie=inventory_pie_json)
-    return render_template('inventory.html', inventory=inventory_data)
+   # return render_template('inventory.html', inventory=inventory_data)
 
 @app.route('/dashboard')
 def dashboard():
