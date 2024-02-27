@@ -50,6 +50,8 @@ def display_inventory():
 def update_inventory():
     new_data = request.get_json()
 
+    print(new_data)
+
     # Perform validation and update the inventory data
     # Here, you can update the inventory_data list with the new data received
 
