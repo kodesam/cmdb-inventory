@@ -4,7 +4,7 @@ import json
 
 app = Flask(__name__)
 
-# Sample inventory data
+# Sample inventory data...
 inventory_data = [
     {
         'hostname': 'server1',
@@ -22,25 +22,28 @@ def index():
 
 @app.route('/inventory')
 def view_inventory():
-    # Generate data for the inventory pie chart...
-
-    # Convert the Figure object to a JSON-compatible format
-    inventory_pie_json = inventory_pie.to_json()
-
-    # Render the dashboard template with the JSON data
-    return render_template('dashboard.html', inventory_pie=inventory_pie_json)
-   # return render_template('inventory.html', inventory=inventory_data)
+    return render_template('inventory.html', inventory=inventory_data)
 
 @app.route('/dashboard')
 def dashboard():
-    # Generate data for the inventory pie chart...
-    
+    # Generate data for the inventory pie chart
+    os_count = {
+        'Linux': 0,
+        'Windows': 0
+    }
+    for item in inventory_data:
+        os_count[item['os']] += 1
+
+    os_labels = list(os_count.keys())
+    os_values = list(os_count.values())
+
     # Create the inventory pie chart
     inventory_pie = go.Figure(data=go.Pie(labels=os_labels, values=os_values))
 
     # Convert the Figure object to a JSON string
     inventory_pie_json = json.dumps(inventory_pie, cls=plotly.utils.PlotlyJSONEncoder)
 
+    # Render the dashboard template with the JSON data
     return render_template('dashboard.html', inventory_pie=inventory_pie_json)
 
 if __name__ == '__main__':
