@@ -2,6 +2,7 @@ from flask import Flask, render_template
 import plotly
 import plotly.graph_objects as go
 import json
+from flask import request
 
 app = Flask(__name__)
 
@@ -16,6 +17,15 @@ inventory_data = [
     },
     # Additional inventory data...
 ]
+
+@app.route('/api/update_inventory', methods=['POST'])
+def update_inventory():
+    new_data = request.get_json()
+
+    # Perform validation and update the inventory data
+    # Here, you can update the inventory_data list with the new data received
+
+    return 'Inventory updated successfully'
 
 @app.route('/')
 def index():
