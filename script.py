@@ -16,7 +16,7 @@ inventory_data = [
         'storage': '500GB'
     },
     # Additional inventory data...
-        {
+    {
         'hostname': 'server2',
         'ip': '192.168.0.11',
         'os': 'Linux2',
